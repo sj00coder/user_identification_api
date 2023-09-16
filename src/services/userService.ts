@@ -1,17 +1,10 @@
+import { User } from '@src/entity/User';
+
 /**
  * Get all users.
  */
-function getAll() {
-  return [
-    {
-      id: 1,
-      email: 'hdjaskd@ksdlja.cdm',
-    },
-    {
-      id: 2,
-      email: 'hdjaskd@ksdlja.cdm',
-    },
-  ];
+function getAll(): Promise<User[]> {
+  return User.find();
 }
 
 // **** Export default **** //

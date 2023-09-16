@@ -8,9 +8,9 @@ import { Request, Response } from 'express';
 /**
  * Get all users.
  */
-function getAll(_: Request, res: Response) {
+async function getAll(_: Request, res: Response) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const users = UserService.getAll();
+  const users = await UserService.getAll();
   return res.status(HttpStatusCodes.OK).json({ users });
 }
 export default {
