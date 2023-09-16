@@ -10,7 +10,8 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
-
+import BaseRouter from '@src/routes/api';
+import Paths from './constants/Paths';
 
 // **** Variables **** //
 
@@ -32,6 +33,8 @@ if (EnvVars.NodeEnv === NodeEnvs.Dev.valueOf()) {
 if (EnvVars.NodeEnv === NodeEnvs.Production.valueOf()) {
   app.use(helmet());
 }
+
+app.use(Paths.Base, BaseRouter);
 
 // Add error handler
 app.use((
