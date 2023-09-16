@@ -255,6 +255,11 @@
     "@types/mime" "*"
     "@types/node" "*"
 
+"@types/validator@^13.7.10":
+  version "13.11.1"
+  resolved "https://registry.npmjs.org/@types/validator/-/validator-13.11.1.tgz"
+  integrity sha512-d/MUkJYdOeKycmm75Arql4M5+UuXmf4cHdHKsyw1GcvnNgL6s77UkgSgJ8TE/rI5PYsnwYq5jkcWBLuN/MpQ1A==
+
 "@typescript-eslint/eslint-plugin@^6.7.0":
   version "6.7.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.7.0.tgz"
@@ -574,6 +579,15 @@ chokidar@^3.5.2:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+class-validator@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.npmjs.org/class-validator/-/class-validator-0.14.0.tgz"
+  integrity sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==
+  dependencies:
+    "@types/validator" "^13.7.10"
+    libphonenumber-js "^1.10.14"
+    validator "^13.7.0"
 
 cli-highlight@^2.1.11:
   version "2.1.11"
@@ -1397,6 +1411,11 @@ levn@^0.4.1:
   dependencies:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
+
+libphonenumber-js@^1.10.14:
+  version "1.10.44"
+  resolved "https://registry.npmjs.org/libphonenumber-js/-/libphonenumber-js-1.10.44.tgz"
+  integrity sha512-svlRdNBI5WgBjRC20GrCfbFiclbF0Cx+sCcQob/C1r57nsoq0xg8r65QbTyVyweQIlB33P+Uahyho6EMYgcOyQ==
 
 locate-path@^6.0.0:
   version "6.0.0"
@@ -2255,6 +2274,11 @@ v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz"
   integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
+
+validator@^13.7.0:
+  version "13.11.0"
+  resolved "https://registry.npmjs.org/validator/-/validator-13.11.0.tgz"
+  integrity sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==
 
 vary@~1.1.2:
   version "1.1.2"
