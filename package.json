@@ -1,5 +1,5 @@
 {
-  "name": "user_identification_api",
+  "name": "contact_identification_api",
   "version": "1.0.0",
   "scripts": {
     "build": "npx ts-node build.ts",

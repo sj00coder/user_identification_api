@@ -13,7 +13,7 @@ Run the server in development mode.
 
 Run all unit-tests with hot-reloading.
 
-### `npm test -- --testFile="name of test file" (i.e. --testFile=Users).`
+### `npm test -- --testFile="name of test file" (i.e. --testFile=Contacts).`
 
 Run a single unit-test.
 

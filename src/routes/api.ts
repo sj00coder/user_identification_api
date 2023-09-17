@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import Paths from '../constants/Paths';
-import userController from '@src/controllers/userController';
+import contactController from '@src/controllers/contactController';
 import jetValidator from 'jet-validator';
 import { isEmailOrNull, isStringOrNull } from '@src/utils/validators';
 
@@ -9,17 +9,17 @@ import { isEmailOrNull, isStringOrNull } from '@src/utils/validators';
 
 const apiRouter = Router(),
   validate = jetValidator();
-// ** Add UserRouter ** //
+// ** Add ContactRouter ** //
 
-const userRouter = Router();
+const contactRouter = Router();
 
-userRouter.post(
-  Paths.Users.Identify,
+contactRouter.post(
+  Paths.Contacts.Identify,
   validate(['email', isEmailOrNull], ['phoneNumber', isStringOrNull]),
-  userController.identify
+  contactController.identify,
 );
 
-apiRouter.use(Paths.Users.Base, userRouter);
+apiRouter.use(Paths.Contacts.Base, contactRouter);
 
 // **** Export default **** //
 

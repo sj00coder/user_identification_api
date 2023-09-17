@@ -1,9 +1,9 @@
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
-import UserService from '@src/services/userService';
+import ContactService from '@src/services/contactService';
 import { Request, Response } from 'express';
 
-const userService = new UserService();
+const contactService = new ContactService();
 // **** Functions **** //
 
 async function identify(req: Request, res: Response) {
@@ -11,7 +11,7 @@ async function identify(req: Request, res: Response) {
     email: string | null;
     phoneNumber: string | null;
   };
-  const data = await userService.identify({ email, phoneNumber });
+  const data = await contactService.identify({ email, phoneNumber });
   return res.status(HttpStatusCodes.OK).json({ contact: { ...data } });
 }
 export default {

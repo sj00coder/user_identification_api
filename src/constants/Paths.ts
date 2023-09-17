@@ -4,8 +4,8 @@
 
 export default {
   Base: '/api',
-  Users: {
-    Base: '/users',
+  Contacts: {
+    Base: '/contacts',
     Identify: '/identify',
   },
 } as const;
