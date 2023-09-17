@@ -1,43 +1,68 @@
 ## About
 
-This project was created with [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
+This project is created to identify and keep track of a customer's identity across multiple purchases.
 
+### Tech Stack
+- Typescript
+- Express.js (Node.js)
+- Postgres
+- typeorm
 
-## Available Scripts
+### Database Structure
+It has `Contact` table with following columns
+```
+    {
+    id                   Int                   
+    phoneNumber          String?
+    email                String?
+    linkedId             Int? // the ID of another Contact linked to this one
+    linkPrecedence       "secondary"|"primary" // "primary" if it's the first Contact in the link
+    createdAt            DateTime              
+    updatedAt            DateTime              
+    deletedAt            DateTime?
+    }
+```
 
-### `npm run dev`
+### API Reference
+#### `POST \api\contacts\identify` 
+```   
+ body: {
+    "email": <any valid email string | null>,
+    "phoneNumber": <any string | null>
+}
+    
+response: {
+    "contact":{
+        "primaryContatctId": 11,
+        "emails": ["george@hillvalley.edu","biffsucks@hillvalley.edu"]
+        "phoneNumbers": ["919191","717171"]
+        "secondaryContactIds": [27]
+    }
+}
+```
+### Available Scripts
+
+#### `npm run dev`
 
 Run the server in development mode.
 
-### `npm test`
-
-Run all unit-tests with hot-reloading.
-
-### `npm test -- --testFile="name of test file" (i.e. --testFile=Contacts).`
-
-Run a single unit-test.
-
-### `npm run test:no-reloading`
-
-Run all unit-tests without hot-reloading.
-
-### `npm run lint`
+#### `npm run lint`
 
 Check for linting errors.
 
-### `npm run build`
+#### `npm run build`
 
 Build the project for production.
 
-### `npm start`
+#### `npm start`
 
 Run the production build (Must be built first).
 
-### `npm start -- --env="name of env file" (default is production).`
+#### `npm start -- --env="name of env file" (default is production).`
 
 Run production build with a different env file.
 
 
-## Additional Notes
+### Additional Notes
 
-- If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`. 
+- Running project in developement require .env file, which is not not public. 
