@@ -7,5 +7,6 @@ export default {
   Users: {
     Base: '/users',
     Get: '/all',
+    Identify: '/identify',
   },
 } as const;
