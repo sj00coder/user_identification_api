@@ -75,6 +75,22 @@ export class User extends BaseEntity {
       },
     });
   }
+
+  static async createNew(
+    linkPrecedence: IlinkPrecedence,
+    primaryUser: User | null,
+    email: string | null,
+    phoneNumber: string | null
+  ): Promise<User> {
+    const user = new User();
+
+    email && (user.email = email);
+    phoneNumber && (user.phoneNumber = phoneNumber);
+    user.linkPrecedence = linkPrecedence;
+    primaryUser && (user.primaryUser = primaryUser);
+
+    return await user.save();
+  }
 }
 
 export type IlinkPrecedence = 'primary' | 'secondary';

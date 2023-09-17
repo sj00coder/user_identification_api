@@ -13,8 +13,6 @@ const apiRouter = Router(),
 
 const userRouter = Router();
 
-// Get all users
-userRouter.get(Paths.Users.Get, userController.getAll);
 userRouter.post(
   Paths.Users.Identify,
   validate(['email', isEmailOrNull], ['phoneNumber', isStringOrNull]),
