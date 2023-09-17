@@ -107,7 +107,6 @@ class ContactService {
           contactWithSameEmail,
         );
       }
-      console.log(contact);
       result = await this._generateOutput(contact);
     }
 
