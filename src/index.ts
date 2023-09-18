@@ -10,9 +10,12 @@ import { AppDataSource } from '@src/db/data-source';
 const SERVER_START_MSG =
   'Express server started on port: ' + EnvVars.Port.toString();
 
-AppDataSource.initialize().then(() => {
-  logger.info('DB has been intialiased !!');
-  server.listen(EnvVars.Port, () => {
-    logger.info(SERVER_START_MSG);
-  });
+server.listen(EnvVars.Port, async () => {
+  logger.info(SERVER_START_MSG);
+  try {
+    await AppDataSource.initialize();
+    logger.info('DB has been intialiased !!');
+  } catch (e) {
+    logger.err(e);
+  }
 });
